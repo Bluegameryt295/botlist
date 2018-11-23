@@ -65,6 +65,14 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 
 
 
+
+
+
+
+
+
+
+
 client.on('message', async message => {
     var command = message.content.toLowerCase().split(" ")[0];
     var prefix = '#';
@@ -151,11 +159,11 @@ client.on('message', async message => {
                                                         msgS.delete();
                                                         message.author.send(`:white_check_mark: | تم قبول بوتك بسيرفر **${message.guild.name}**`);
                                                         message.guild.member(message.author).addRole(modRole.id);
-                                                        message.guild.channels.find(r => r.name === 'قبول-رفض').send(`:white_check_mark: | تم قبولك [ <@${message.author.id}> ]`);
+                                                        message.guild.channels.find(r => r.name === 'قبول-رفض').send(`:white_check_mark: | تم قبول بوتك [ <@${message.author.id}> ]`);
                                                     });
                                                     noAcceptRe.on('collect', r => {
                                                         msgS.delete();
-                                                        message.author.send(`:x: | تم رفضك بسيرفر **${message.guild.name}**`);
+                                                        message.author.send(`:x: | تم رفض بوتك **${message.guild.name}**`);
                                                         message.guild.channels.find(r => r.name === 'قبول-رفض').send(`:x: | تم رفض بوتك  [ <@${message.author.id}> ]`);
                                                     });
                                                 })
